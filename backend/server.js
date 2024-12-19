@@ -28,12 +28,17 @@ app.use('/api/user', usersRoute)
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")))
 
+app.get("*", (req, res)=>{
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
+})
+
+
 const connectDB = async()=>{
     const url = process.env.MONGODB_URL 
     try {
         await mongoose.connect(url)
         console.log(`Successfully connected to MongoDB..`)
-        server.listen(PORT, ()=>{
+        server.listen(PORT, ()=>{ 
             console.log(`Server running on port ${PORT}...`)
         })
     } catch (error) {
