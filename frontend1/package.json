@@ -16,6 +16,7 @@
     "react-icons": "^5.4.0",
     "react-router-dom": "^6.28.0",
     "socket.io-client": "^4.8.1",
+    "speedx": "file:..",
     "zustand": "^5.0.2"
   },
   "devDependencies": {

@@ -26,10 +26,10 @@ app.use('/api/auth', authRouter)
 app.use('/api/message', messageRoute) 
 app.use('/api/user', usersRoute)
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")))
+app.use(express.static(path.join(__dirname, "/frontend1/dist")))
 
 app.get("*", (req, res)=>{
-    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
+    res.sendFile(path.join(__dirname, "frontend1", "dist", "index.html"))
 })
 
 
